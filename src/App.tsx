@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "motion/react"
 import { Fragment, useState } from "react"
 import { BookMark, Camera, Feather, Images, Mic } from "./components/svgs";
+import { Credits } from "./components/credits";
 
 function App() {
   const [isOpened, setisOpened] = useState(false);
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <section className="w-full h-dvh flex items-center justify-center overflow-hidden">
+      <Credits />
       <div className="w-80 h-60 flex flex-col justify-end gap-4">
         <div className="flex-grow bg-gray-300 rounded-bl-2xl rounded-br-2xl"></div>
         <div className="w-full h-14 relative flex justify-center items-center">
