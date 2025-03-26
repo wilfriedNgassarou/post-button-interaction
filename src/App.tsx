@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react"
 import { Fragment, useState } from "react"
-import { BookMark, Camera, Feather, Images, Mic } from "./components/svgs";
+import { Calendar, Camera, Feather, Images, Mic } from "./components/svgs";
 import { Credits } from "./components/credits";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     { id: 'camera', icon: <Camera /> },
     { id: 'images', icon: <Images /> },
     { id: 'feather', icon: <Feather /> },
-    { id: 'bookmark', icon: <BookMark /> },
+    { id: 'calendar', icon: <Calendar /> },
     { id: 'mic', icon: <Mic /> }
   ]
 
@@ -21,7 +21,7 @@ function App() {
 
     setTimeout(() => {
       setisOpened(false)
-    }, 2000);
+    }, 2500);
   }
 
   return (
@@ -71,7 +71,7 @@ function App() {
                   animate={{ y: 0 }} 
                   exit={{ y: -40 }}
                   transition={{ type: 'spring', duration: .7, bounce: .3 }} 
-                  className="inline-block absolute z-20 text-white"
+                  className="inline-block absolute z-20 text-white font-medium cursor-pointer"
                 >
                   Post
                 </motion.span>
@@ -83,6 +83,9 @@ function App() {
                 className="absolute inset-0 bg-black cursor-pointer flex justify-center items-center gap-3"
                 style={{ borderRadius: 40 }}
               >
+                <div className="animated-link-effect">
+                  <div />
+                </div>
                 {actions.map((item, index, array) => (
                   <Fragment key={item.id}>
                     <motion.span
@@ -105,9 +108,12 @@ function App() {
               <motion.div
                 layoutId="button" 
                 onClick={handleClick}
-                className="absolute w-28 h-full bg-black cursor-pointer flex justify-center items-center"
+                className="absolute w-28 h-full bg-black cursor-pointer flex justify-center items-center overflow-hidden"
                 style={{ borderRadius: 40 }}
               >
+                <div className="animated-link-effect">
+                  <div />
+                </div>
                 {actions.map((item) => (
                   <div
                     key={item.id}

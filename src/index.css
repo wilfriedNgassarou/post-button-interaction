@@ -5,3 +5,30 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.animated-link-effect {
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  position: absolute;
+  border-radius: 99px;
+  padding: 1px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.animated-link-effect div {
+  background-image: conic-gradient(from 0 at 50% 50%, rgba(255, 255, 255, 1) 0deg, rgba(255, 255, 255, 0) 60deg, rgba(255, 255, 255, 0) 310deg, rgba(255, 255, 255, 1) 360deg);
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  animation: rotate 2s linear infinite;
+  aspect-ratio: 1;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) scale(1.4) rotate(0turn) }
+
+  to { transform: translate(-50%, -50%) scale(1.4) rotate(1turn) }
+}

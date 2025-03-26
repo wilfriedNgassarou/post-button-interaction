@@ -4,7 +4,7 @@ export function Feather() {
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2"
+      strokeWidth="1"
       className="w-8 h-8 stroke-white"
       viewBox="0 0 24 24"
     >
